@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{34363271-1D6E-4892-A855-CAB810E6DE13}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RealEstate</RootNamespace>
+    <AssemblyName>RealEstate</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <TransformOnBuild>True</TransformOnBuild>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <TransformOnBuild>True</TransformOnBuild>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AnalysisServices, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\BANL100\BANL110_Mainline\_External References\Net40\ThirdParty\Microsoft.AnalysisServices.DLL</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="Primavera.BusinessAnalytics.Core" />
+    <Reference Include="Primavera.BusinessAnalytics.Core.MEF" />
+    <Reference Include="Primavera.BusinessAnalytics.Core.Schemas" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Schemas\MultiDimensionalData.xml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MultiDimensionalData.tt</DependentUpon>
+    </Content>
+    <Content Include="Schemas\SolutionSchema.xml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SolutionSchema.tt</DependentUpon>
+    </Content>
+    <Content Include="Scripts\CreateDashboards.sql">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateDashboards.tt</DependentUpon>
+    </Content>
+    <Content Include="Scripts\CreateIndicators.sql">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateIndicators.tt</DependentUpon>
+    </Content>
+    <Content Include="Scripts\DeleteDashboards.sql">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeleteDashboards.tt</DependentUpon>
+    </Content>
+    <Content Include="Scripts\DeleteIndicators.sql">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeleteIndicators.tt</DependentUpon>
+    </Content>
+    <Content Include="Solution.config" />
+    <Content Include="Schemas\MultiDimensionalData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MultiDimensionalData.xml</LastGenOutput>
+    </Content>
+    <Content Include="Schemas\SolutionSchema.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SolutionSchema.xml</LastGenOutput>
+    </Content>
+    <Content Include="Schemas\SolutionSchemaModel.ssm">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Schemas\SolutionSchemaModel.ssm.diagram">
+      <DependentUpon>SolutionSchemaModel.ssm</DependentUpon>
+    </Content>
+    <Content Include="Scripts\OnCreateSolution.sql" />
+    <Content Include="Scripts\OnDeleteSolution.sql" />
+    <Content Include="Scripts\OnUpdateSolution.sql" />
+    <Content Include="Scripts\CreateDashboards.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CreateDashboards.sql</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\DeleteDashboards.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DeleteDashboards.sql</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\CreateIndicators.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CreateIndicators.sql</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\DeleteIndicators.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DeleteIndicators.sql</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\OlapOnSolutionDeploy.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>OlapOnSolutionDeploy.xmla</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\OlapOnSolutionUndeploy.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>OlapOnSolutionUndeploy.xmla</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MakeCabFile.bat" />
+    <None Include="Scripts\OlapOnSolutionDeploy.xmla">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OlapOnSolutionDeploy.tt</DependentUpon>
+    </None>
+    <None Include="Scripts\OlapOnSolutionUndeploy.xmla">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OlapOnSolutionUndeploy.tt</DependentUpon>
+    </None>
+    <None Include="Solution.ddf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\RealEstateExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+      cd $(ProjectDir)
+      .\MakeCabFile.bat
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

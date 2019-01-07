@@ -1,0 +1,12 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ Import Namespace="System.IO" #>
+<#@ assembly name="Primavera.BusinessAnalytics.SDK.CodeGeneration.dll" #>
+<#@ import namespace="Primavera.BusinessAnalytics.SDK.CodeGeneration" #>
+<#@ output extension=".xml" #>
+
+<#
+    using (MultiDimensionalDataGenerator t = new MultiDimensionalDataGenerator(Host.ResolvePath(@"..\Solution.config")))
+    {
+        this.Write(t.TransformText());
+    }
+#>

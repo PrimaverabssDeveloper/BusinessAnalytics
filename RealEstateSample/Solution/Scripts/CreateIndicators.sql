@@ -1,0 +1,2 @@
+﻿
+-- Create Indicator data

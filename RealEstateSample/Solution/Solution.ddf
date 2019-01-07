@@ -1,0 +1,21 @@
+﻿.OPTION EXPLICIT ; Generate errors 
+.Set CabinetNameTemplate="RealEstate.bap"
+.Set DiskDirectoryTemplate=CDROM ; All cabinets go in single directory
+.Set CompressionType=MSZIP ; All files compressed in cabinet files
+.Set UniqueFiles="ON"
+.Set Cabinet=on
+.Set DestinationDir="Assemblies"
+bin\RealEstate.dll
+.Set DestinationDir="Schemas"
+Schemas\SolutionSchema.xml
+Schemas\MultiDimensionalData.xml
+.Set DestinationDir="Scripts"
+Scripts\OnCreateSolution.sql
+Scripts\OnUpdateSolution.sql
+Scripts\OnDeleteSolution.sql
+Scripts\CreateIndicators.sql
+Scripts\DeleteIndicators.sql
+Scripts\CreateDashboards.sql
+Scripts\DeleteDashboards.sql
+Scripts\OlapOnSolutionDeploy.xmla
+Scripts\OlapOnSolutionUndeploy.xmla

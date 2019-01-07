@@ -1,0 +1,293 @@
+﻿
+<MultiDimensionalData xmlns="http://schemas.primaverabss.com/BusinessAnalytics/MultiDimensionalData">
+    <Cubes>
+        <Cube Id="Real Estate"
+              Name="Real Estate">
+            <MeasureGroups>
+                <MeasureGroup Id="Visitas"
+                              Name="Visitas"
+                              IgnoreCustomDimensions="false"
+                              LinkedToAnalyticalCube="false"
+                              RelationalEntity="FactVisitas"
+                              RelationalSchema="realestate"
+                              WBEnabled="false">
+                    <MeasureGroupAttributes>
+                        <MeasureGroupAttribute Name="Detalhe Visitas"
+                                               LookupLevelFullPath="[Detalhe Visitas].[Detalhe Visitas].[Id]"
+                                               ReadOnly ="false"
+                                               RelationalAttribute="Id"
+                                               SourceDimension="Detalhe Visitas"
+                                               Type="Dimension" />
+                        <MeasureGroupAttribute Name="Date"
+                                               LookupLevelFullPath="[Date].[Calendar].[Date]"
+                                               ReadOnly ="false"
+                                               RelationalAttribute="DataId"
+                                               SourceDimension="Date"
+                                               Type="Dimension" />
+                        <MeasureGroupAttribute Name="Agente"
+                                               LookupLevelFullPath="[Agente].[Agente].[Id]"
+                                               ReadOnly ="false"
+                                               RelationalAttribute="AgenteId"
+                                               SourceDimension="Agente"
+                                               Type="Dimension" />
+                        <MeasureGroupAttribute Name="Cliente"
+                                               LookupLevelFullPath="[Cliente].[Cliente].[Id]"
+                                               ReadOnly ="false"
+                                               RelationalAttribute="ClienteId"
+                                               SourceDimension="Cliente"
+                                               Type="Dimension" />
+                        <MeasureGroupAttribute Name="Imóvel"
+                                               LookupLevelFullPath="[Imóvel].[Imóvel].[Id]"
+                                               ReadOnly ="false"
+                                               RelationalAttribute="ImovelId"
+                                               SourceDimension="Imóvel"
+                                               Type="Dimension" />
+                        <MeasureGroupAttribute Name="Avaliacao"
+                                                 ReadOnly ="false"
+                                                 RelationalAttribute="Avaliacao"
+                                                 Type="Measure" />
+                        <MeasureGroupAttribute Name="Contagem Visitas"
+                                                 ReadOnly ="true"
+                                                 RelationalAttribute=""
+                                                 Type="Measure" />
+                    </MeasureGroupAttributes>
+                </MeasureGroup>
+                <MeasureGroup Id="Vendas"
+                              Name="Vendas"
+                              IgnoreCustomDimensions="false"
+                              LinkedToAnalyticalCube="false"
+                              RelationalEntity="FactVendas"
+                              RelationalSchema="realestate"
+                              WBEnabled="false">
+                    <MeasureGroupAttributes>
+                        <MeasureGroupAttribute Name="Detalhe Vendas"
+                                               LookupLevelFullPath="[Detalhe Vendas].[Detalhe Vendas].[Id]"
+                                               ReadOnly ="false"
+                                               RelationalAttribute="Id"
+                                               SourceDimension="Detalhe Vendas"
+                                               Type="Dimension" />
+                        <MeasureGroupAttribute Name="Date"
+                                               LookupLevelFullPath="[Date].[Calendar].[Date]"
+                                               ReadOnly ="false"
+                                               RelationalAttribute="DataId"
+                                               SourceDimension="Date"
+                                               Type="Dimension" />
+                        <MeasureGroupAttribute Name="Agente"
+                                               LookupLevelFullPath="[Agente].[Agente].[Id]"
+                                               ReadOnly ="false"
+                                               RelationalAttribute="AgenteId"
+                                               SourceDimension="Agente"
+                                               Type="Dimension" />
+                        <MeasureGroupAttribute Name="Cliente"
+                                               LookupLevelFullPath="[Cliente].[Cliente].[Id]"
+                                               ReadOnly ="false"
+                                               RelationalAttribute="ClienteId"
+                                               SourceDimension="Cliente"
+                                               Type="Dimension" />
+                        <MeasureGroupAttribute Name="Imóvel"
+                                               LookupLevelFullPath="[Imóvel].[Imóvel].[Id]"
+                                               ReadOnly ="false"
+                                               RelationalAttribute="ImovelId"
+                                               SourceDimension="Imóvel"
+                                               Type="Dimension" />
+                        <MeasureGroupAttribute Name="Valor Venda"
+                                                 ReadOnly ="false"
+                                                 RelationalAttribute="ValorVenda"
+                                                 Type="Measure" />
+                        <MeasureGroupAttribute Name="Valor Comissao"
+                                                 ReadOnly ="false"
+                                                 RelationalAttribute="ValorComissao"
+                                                 Type="Measure" />
+                        <MeasureGroupAttribute Name="Valor Total"
+                                                 ReadOnly ="false"
+                                                 RelationalAttribute="ValorTotal"
+                                                 Type="Measure" />
+                    </MeasureGroupAttributes>
+                </MeasureGroup>
+                <MeasureGroup Id="Visitas 1"
+                              Name="Contagens"
+                              IgnoreCustomDimensions="false"
+                              LinkedToAnalyticalCube="false"
+                              RelationalEntity="FactVisitas"
+                              RelationalSchema="realestate"
+                              WBEnabled="false">
+                    <MeasureGroupAttributes>
+                        <MeasureGroupAttribute Name="Detalhe Visitas"
+                                               LookupLevelFullPath="[Detalhe Visitas].[Detalhe Visitas].[Id]"
+                                               ReadOnly ="false"
+                                               RelationalAttribute="Id"
+                                               SourceDimension="Detalhe Visitas"
+                                               Type="Dimension" />
+                        <MeasureGroupAttribute Name="Date"
+                                               LookupLevelFullPath="[Date].[Calendar].[Date]"
+                                               ReadOnly ="false"
+                                               RelationalAttribute="DataId"
+                                               SourceDimension="Date"
+                                               Type="Dimension" />
+                        <MeasureGroupAttribute Name="Agente"
+                                               LookupLevelFullPath="[Agente].[Agente].[Id]"
+                                               ReadOnly ="false"
+                                               RelationalAttribute="AgenteId"
+                                               SourceDimension="Agente"
+                                               Type="Dimension" />
+                        <MeasureGroupAttribute Name="Cliente"
+                                               LookupLevelFullPath="[Cliente].[Cliente].[Id]"
+                                               ReadOnly ="false"
+                                               RelationalAttribute="ClienteId"
+                                               SourceDimension="Cliente"
+                                               Type="Dimension" />
+                        <MeasureGroupAttribute Name="Imóvel"
+                                               LookupLevelFullPath="[Imóvel].[Imóvel].[Id]"
+                                               ReadOnly ="false"
+                                               RelationalAttribute="ImovelId"
+                                               SourceDimension="Imóvel"
+                                               Type="Dimension" />
+                        <MeasureGroupAttribute Name="Número Visitas"
+                                                 ReadOnly ="false"
+                                                 RelationalAttribute="IdVisita"
+                                                 Type="Measure" />
+                    </MeasureGroupAttributes>
+                </MeasureGroup>
+            </MeasureGroups>
+            <CubeDimensions>
+                <CubeDimension Name="Detalhe Visitas"
+                               Dimension="Detalhe Visitas" />       
+                <CubeDimension Name="Detalhe Vendas"
+                               Dimension="Detalhe Vendas" />       
+                <CubeDimension Name="Date"
+                               Dimension="Date" />       
+                <CubeDimension Name="Agente"
+                               Dimension="Agente" />       
+                <CubeDimension Name="Cliente"
+                               Dimension="Cliente" />       
+                <CubeDimension Name="Imóvel"
+                               Dimension="Imóvel" />       
+            </CubeDimensions>
+        </Cube>
+    </Cubes>
+    <Dimensions>
+        <Dimension Id="Agente"
+                   Name="Agente"
+                   DefaultLevelAttribute="Id"
+                   DefaultLevelFullPath="[Agente].[Agente].[Id]"
+                   ExcludeMembers="[Agente].[Agente].UnknownMember"
+                   IsAnalytical="false"
+                   RelationalEntity="DimAgentes"
+                   RelationalSchema="realestate"
+                   WBEnabled="false">
+            <DimensionAttributes>
+                <DimensionAttribute Name="Id"
+                                    ReadOnly ="false"
+                                    RelationalAttribute="Id"
+                                    Usage="Key"
+                                    Visible="true"/>
+                <DimensionAttribute Name="Nome"
+                                    ReadOnly ="false"
+                                    RelationalAttribute="Nome"
+                                    Usage="Regular"
+                                    Visible="true"/>
+            </DimensionAttributes>
+        </Dimension>
+        <Dimension Id="Cliente"
+                   Name="Cliente"
+                   DefaultLevelAttribute="Id"
+                   DefaultLevelFullPath="[Cliente].[Cliente].[Id]"
+                   ExcludeMembers="[Cliente].[Cliente].UnknownMember"
+                   IsAnalytical="false"
+                   RelationalEntity="DimClientes"
+                   RelationalSchema="realestate"
+                   WBEnabled="false">
+            <DimensionAttributes>
+                <DimensionAttribute Name="Id"
+                                    ReadOnly ="false"
+                                    RelationalAttribute="Id"
+                                    Usage="Key"
+                                    Visible="true"/>
+                <DimensionAttribute Name="Nome"
+                                    ReadOnly ="false"
+                                    RelationalAttribute="Nome"
+                                    Usage="Regular"
+                                    Visible="true"/>
+                <DimensionAttribute Name="Cidade"
+                                    ReadOnly ="false"
+                                    RelationalAttribute="Cidade"
+                                    Usage="Regular"
+                                    Visible="true"/>
+            </DimensionAttributes>
+        </Dimension>
+        <Dimension Id="Detalhe Vendas"
+                   Name="Detalhe Vendas"
+                   DefaultLevelAttribute="Id"
+                   DefaultLevelFullPath="[Detalhe Vendas].[Detalhe Vendas].[Id]"
+                   ExcludeMembers="[Detalhe Vendas].[Detalhe Vendas].UnknownMember"
+                   IsAnalytical="false"
+                   RelationalEntity="FactVendas"
+                   RelationalSchema="realestate"
+                   WBEnabled="false">
+            <DimensionAttributes>
+                <DimensionAttribute Name="Id"
+                                    ReadOnly ="false"
+                                    RelationalAttribute="Id"
+                                    Usage="Key"
+                                    Visible="true"/>
+            </DimensionAttributes>
+        </Dimension>
+        <Dimension Id="Detalhe Visitas"
+                   Name="Detalhe Visitas"
+                   DefaultLevelAttribute="Id"
+                   DefaultLevelFullPath="[Detalhe Visitas].[Detalhe Visitas].[Id]"
+                   ExcludeMembers="[Detalhe Visitas].[Detalhe Visitas].UnknownMember"
+                   IsAnalytical="false"
+                   RelationalEntity="FactVisitas"
+                   RelationalSchema="realestate"
+                   WBEnabled="false">
+            <DimensionAttributes>
+                <DimensionAttribute Name="Id"
+                                    ReadOnly ="false"
+                                    RelationalAttribute="Id"
+                                    Usage="Key"
+                                    Visible="true"/>
+            </DimensionAttributes>
+        </Dimension>
+        <Dimension Id="Imóvel"
+                   Name="Imóvel"
+                   DefaultLevelAttribute="Id"
+                   DefaultLevelFullPath="[Imóvel].[Imóvel].[Id]"
+                   ExcludeMembers="[Imóvel].[Imóvel].UnknownMember"
+                   IsAnalytical="false"
+                   RelationalEntity="DimImoveis"
+                   RelationalSchema="realestate"
+                   WBEnabled="false">
+            <DimensionAttributes>
+                <DimensionAttribute Name="Localização Proprietário"
+                                    AttributeHierarchyEnabled="true"
+                                    LookupLevelFullPath="[Imóvel].[Cliente].[Localização Proprietário]" 
+                                    ReadOnly ="false"
+                                    RelationalAttribute="ProprietarioId"
+                                    SourceDimension="Cliente"
+                                    Usage="Regular"
+                                    Visible="true" />
+                <DimensionAttribute Name="Id"
+                                    ReadOnly ="false"
+                                    RelationalAttribute="Id"
+                                    Usage="Key"
+                                    Visible="true"/>
+                <DimensionAttribute Name="Localização"
+                                    ReadOnly ="false"
+                                    RelationalAttribute="Localizacao"
+                                    Usage="Regular"
+                                    Visible="true"/>
+                <DimensionAttribute Name="Tipologia"
+                                    ReadOnly ="false"
+                                    RelationalAttribute="Tipologia"
+                                    Usage="Regular"
+                                    Visible="true"/>
+                <DimensionAttribute Name="Código Imóvel"
+                                    ReadOnly ="false"
+                                    RelationalAttribute="ImovelNK"
+                                    Usage="Regular"
+                                    Visible="true"/>
+            </DimensionAttributes>
+        </Dimension>
+    </Dimensions>
+</MultiDimensionalData>

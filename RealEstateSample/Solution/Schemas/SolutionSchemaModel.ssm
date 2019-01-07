@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<solutionSchema xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="dc4dc74e-f328-4f7f-bf94-52b91b678c17" name="RealEstate" version="1.0" description="RealEstate" olapDatabaseFilePath="C:\Business Analytics\Real Estate\Real Estate OLAP\bin\RealEstateOlap.asdatabase" xmlns="http://schemas.microsoft.com/dsltools/SolutionSchemaModel">
+  <entitiesGraph>
+    <solutionSchemaHasEntitiesGraph Id="365573ab-0aa2-4dcf-9ae9-696cd8951274">
+      <entitiesGraph Id="5d69d1e1-8ffd-4157-8ddc-26c843736363">
+        <entities>
+          <entitiesGraphHasEntities Id="756f9f1b-9c2a-4f7f-9fda-f0cc3b254bd8">
+            <entity Id="02a365a2-0919-4459-86f9-789e7c1f4e21" name="DimClientes" schema="realestate" isVersioned="false" ignoreViewCreation="false">
+              <attributes>
+                <entityHasAttributes Id="ddebc2b0-2cc2-4854-bab7-0815a8929a86">
+                  <attribute Id="db133dc1-53cd-4934-b2b7-c798581ba7b8" name="ClienteNK" nameAndType="ClienteNK : Text" naturalKey="true" required="true" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+                <entityHasAttributes Id="40e418f4-22c8-4c99-a717-d09c5e3c83c4">
+                  <attribute Id="d09eb6de-1638-4778-92e2-c644837037dd" name="Nome" type="LongText" nameAndType="Nome : LongText" naturalKey="false" required="false" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+                <entityHasAttributes Id="942f2e16-fde5-4946-b04a-3a74be9b1034">
+                  <attribute Id="25590dbf-3742-40f5-a088-a2e41da9df87" name="Cidade" nameAndType="Cidade : Text" naturalKey="false" required="false" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+              </attributes>
+            </entity>
+          </entitiesGraphHasEntities>
+          <entitiesGraphHasEntities Id="02f8e543-6af1-4972-a3be-38ce53984770">
+            <entity Id="53bb2eb2-9d6a-4344-996c-4c7a2e5faa41" name="DimAgentes" schema="realestate" isVersioned="false" ignoreViewCreation="false">
+              <attributes>
+                <entityHasAttributes Id="df7e9d18-b761-4a05-85a4-f5e01a163816">
+                  <attribute Id="887eb677-01f8-4242-91ee-7f8af4da7115" name="AgenteNK" nameAndType="AgenteNK : Text" naturalKey="true" required="true" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+                <entityHasAttributes Id="6e4d2b35-22de-452b-a4d6-ef3da735ee8d">
+                  <attribute Id="63784272-a12c-4fc8-8fc8-3dbb635aa722" name="Nome" type="LongText" nameAndType="Nome : LongText" naturalKey="false" required="false" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+              </attributes>
+            </entity>
+          </entitiesGraphHasEntities>
+          <entitiesGraphHasEntities Id="cab13ad8-1593-42ce-900c-eb3634e38345">
+            <entity Id="c44c0d29-6218-4826-99fe-5537fa67ae7f" name="DimImoveis" schema="realestate" isVersioned="false" ignoreViewCreation="false">
+              <targets>
+                <association Id="85258892-5d27-4a82-a9c1-0230bfde9da9" associationId="02a365a2-0919-4459-86f9-789e7c1f4e21">
+                  <entityMoniker Id="02a365a2-0919-4459-86f9-789e7c1f4e21" />
+                </association>
+              </targets>
+              <attributes>
+                <entityHasAttributes Id="b1325eaf-9e77-4686-a32b-0ca2b25785c6">
+                  <attribute Id="65628061-1594-4aa2-af4c-8ad5f8b2e492" name="ImovelNK" nameAndType="ImovelNK : Text" naturalKey="true" required="true" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+                <entityHasAttributes Id="c2ba4606-4583-4fac-99b6-b69bdb3c3dd1">
+                  <attribute Id="7f507828-2481-4b90-ad35-9e99b3824c88" name="Localizacao" nameAndType="Localizacao : Text" naturalKey="false" required="false" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+                <entityHasAttributes Id="fd04b29f-8e60-4758-a3ad-bc6bd7497002">
+                  <attribute Id="586e479a-6049-418f-b657-40101b2f9300" name="Tipologia" type="ShortText" nameAndType="Tipologia : ShortText" naturalKey="false" required="false" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+              </attributes>
+              <entityRelations>
+                <entityHasEntityRelations Id="cee102a1-4d69-48d7-ba38-d35adf57fd61">
+                  <entityRelation Id="c665e530-ce85-43a7-b997-b17b1258d3e9" name="Proprietario" enforceFKConstraint="false" relatedEntity="DimClientes" associationId="85258892-5d27-4a82-a9c1-0230bfde9da9" targetId="02a365a2-0919-4459-86f9-789e7c1f4e21" nameAndType="Proprietario : DimClientes" />
+                </entityHasEntityRelations>
+              </entityRelations>
+            </entity>
+          </entitiesGraphHasEntities>
+          <entitiesGraphHasEntities Id="37440766-b03c-4a22-9e46-a804f82ea282">
+            <entity Id="d0b2baf7-4389-46a9-b195-0af2215ff3be" name="FactVisitas" schema="realestate" isVersioned="false" ignoreViewCreation="false">
+              <targets>
+                <association Id="7eac24ad-e2d4-492e-b199-6ee3777a5b4a" associationId="53bb2eb2-9d6a-4344-996c-4c7a2e5faa41">
+                  <entityMoniker Id="53bb2eb2-9d6a-4344-996c-4c7a2e5faa41" />
+                </association>
+                <association Id="6db4351b-f56e-4257-8b61-1b0cceba811a" associationId="c44c0d29-6218-4826-99fe-5537fa67ae7f">
+                  <entityMoniker Id="c44c0d29-6218-4826-99fe-5537fa67ae7f" />
+                </association>
+                <association Id="1907b35d-ddc2-48d8-a2e9-df1880821dd2" associationId="02a365a2-0919-4459-86f9-789e7c1f4e21">
+                  <entityMoniker Id="02a365a2-0919-4459-86f9-789e7c1f4e21" />
+                </association>
+              </targets>
+              <attributes>
+                <entityHasAttributes Id="734e476b-8e1e-4830-bf23-bd3d58b9ff2e">
+                  <attribute Id="7168405e-7c11-4178-88d1-2a904044d737" name="FactVisitaNK" nameAndType="FactVisitaNK : Text" naturalKey="true" required="true" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+                <entityHasAttributes Id="c9871f98-d39b-4af8-a5e5-531ef13127fe">
+                  <attribute Id="7fad665c-1f18-4a97-ac78-8b9099c87000" name="DataId" type="Number" nameAndType="DataId : Number" naturalKey="false" required="false" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+                <entityHasAttributes Id="232710b3-12da-4ded-91ed-c6ada9e73c6f">
+                  <attribute Id="be5f0420-17a6-41c8-a8d3-9c99783373dc" name="Avaliacao" type="Number" nameAndType="Avaliacao : Number" naturalKey="false" required="false" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+                <entityHasAttributes Id="f747e754-58cf-4c15-bc11-e26db64346c8">
+                  <attribute Id="74902840-59c4-4d5a-b14f-7e2edd7338f1" name="Caracteristica" nameAndType="Caracteristica : Text" naturalKey="false" required="false" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+                <entityHasAttributes Id="b4244c4b-99b1-4b44-96c1-cc0222fd0ab0">
+                  <attribute Id="0669f0bd-a314-4d2c-92fd-44a7e3997662" name="IdVisita" nameAndType="IdVisita : Text" naturalKey="false" required="false" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+              </attributes>
+              <entityRelations>
+                <entityHasEntityRelations Id="56ccbdf8-4156-4363-84f4-ceac14bdb6c1">
+                  <entityRelation Id="e37b8a89-cc6c-4cad-bbae-cc88aa89da1c" name="Agente" enforceFKConstraint="false" relatedEntity="DimAgentes" associationId="7eac24ad-e2d4-492e-b199-6ee3777a5b4a" targetId="53bb2eb2-9d6a-4344-996c-4c7a2e5faa41" nameAndType="Agente : DimAgentes" />
+                </entityHasEntityRelations>
+                <entityHasEntityRelations Id="981dd191-e897-48e1-822d-caf72e203bad">
+                  <entityRelation Id="6d854f02-0636-4fa0-a887-4ed6e0f2887c" name="Imovel" enforceFKConstraint="false" relatedEntity="DimImoveis" associationId="6db4351b-f56e-4257-8b61-1b0cceba811a" targetId="c44c0d29-6218-4826-99fe-5537fa67ae7f" nameAndType="Imovel : DimImoveis" />
+                </entityHasEntityRelations>
+                <entityHasEntityRelations Id="bead2c83-e962-40d8-a28f-7b74074bf910">
+                  <entityRelation Id="2f03fe72-f40f-405f-861f-f1be0d71636d" name="Cliente" enforceFKConstraint="false" relatedEntity="DimClientes" associationId="1907b35d-ddc2-48d8-a2e9-df1880821dd2" targetId="02a365a2-0919-4459-86f9-789e7c1f4e21" nameAndType="Cliente : DimClientes" />
+                </entityHasEntityRelations>
+              </entityRelations>
+            </entity>
+          </entitiesGraphHasEntities>
+          <entitiesGraphHasEntities Id="fd9e5f95-3064-4b20-9eda-e04d5aaf151f">
+            <entity Id="0f9a5685-3311-4543-aad9-deef6cb78c62" name="FactVendas" schema="realestate" isVersioned="false" ignoreViewCreation="false">
+              <targets>
+                <association Id="385eeaa3-56ea-47ef-b34e-16687ff2c699" associationId="53bb2eb2-9d6a-4344-996c-4c7a2e5faa41">
+                  <entityMoniker Id="53bb2eb2-9d6a-4344-996c-4c7a2e5faa41" />
+                </association>
+                <association Id="d5ce7aed-1338-4390-84af-433248c33410" associationId="c44c0d29-6218-4826-99fe-5537fa67ae7f">
+                  <entityMoniker Id="c44c0d29-6218-4826-99fe-5537fa67ae7f" />
+                </association>
+                <association Id="b147978a-d9a0-4f26-81d0-d7a5cee21e4d" associationId="02a365a2-0919-4459-86f9-789e7c1f4e21">
+                  <entityMoniker Id="02a365a2-0919-4459-86f9-789e7c1f4e21" />
+                </association>
+              </targets>
+              <attributes>
+                <entityHasAttributes Id="36fd3163-26c4-497d-a441-3378b5bdc1e9">
+                  <attribute Id="8f09fa47-fc6c-4278-8b42-ad09e5319847" name="FactVendaNK" nameAndType="FactVendaNK : Text" naturalKey="true" required="true" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+                <entityHasAttributes Id="d9df79d4-80c6-4980-a3a9-65ed2bc8ccff">
+                  <attribute Id="afd10637-ea84-4df7-b638-f29717524ac2" name="DataId" type="Number" nameAndType="DataId : Number" naturalKey="false" required="false" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+                <entityHasAttributes Id="dedae034-84a9-42fc-9b50-860bb94c23ab">
+                  <attribute Id="d7f6b3cd-45b1-4e9b-9632-81eee945e278" name="ValorVenda" type="Decimal" nameAndType="ValorVenda : Decimal" naturalKey="false" required="false" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+                <entityHasAttributes Id="d2f0a70b-80db-4a61-b753-18500c869c50">
+                  <attribute Id="1c96ab14-b43d-4f00-950e-7fb5543ca281" name="ValorComissao" type="Decimal" nameAndType="ValorComissao : Decimal" naturalKey="false" required="false" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="false" />
+                </entityHasAttributes>
+              </attributes>
+              <calculatedAttributes>
+                <entityHasCalculatedAttributes Id="151ab13c-9b5d-4df9-87e5-49e7e3bd884c">
+                  <calculatedAttribute Id="21395d0e-9992-4df3-9fd4-e21d41cfd1f7" name="ValorTotal" formula="ValorVenda + ValorComissao" />
+                </entityHasCalculatedAttributes>
+              </calculatedAttributes>
+              <entityRelations>
+                <entityHasEntityRelations Id="45ceb0fb-4916-4a40-8e5e-1e2d2c82b915">
+                  <entityRelation Id="0923b533-830e-4b8e-a883-aacc36040a42" name="Agente" enforceFKConstraint="false" relatedEntity="DimAgentes" associationId="385eeaa3-56ea-47ef-b34e-16687ff2c699" targetId="53bb2eb2-9d6a-4344-996c-4c7a2e5faa41" nameAndType="Agente : DimAgentes" />
+                </entityHasEntityRelations>
+                <entityHasEntityRelations Id="be6d8769-48eb-41f7-95e5-3a7962d147d7">
+                  <entityRelation Id="9459fec7-f3a3-465a-8258-9415ced3c427" name="Imovel" enforceFKConstraint="false" relatedEntity="DimImoveis" associationId="d5ce7aed-1338-4390-84af-433248c33410" targetId="c44c0d29-6218-4826-99fe-5537fa67ae7f" nameAndType="Imovel : DimImoveis" />
+                </entityHasEntityRelations>
+                <entityHasEntityRelations Id="1f23c94a-8a7a-4fbc-8522-f7f010a68dcd">
+                  <entityRelation Id="d213f602-8f4a-4ad4-a08b-3f1f4f65e154" name="Cliente" enforceFKConstraint="false" relatedEntity="DimClientes" associationId="b147978a-d9a0-4f26-81d0-d7a5cee21e4d" targetId="02a365a2-0919-4459-86f9-789e7c1f4e21" nameAndType="Cliente : DimClientes" />
+                </entityHasEntityRelations>
+              </entityRelations>
+            </entity>
+          </entitiesGraphHasEntities>
+          <entitiesGraphHasEntities Id="dbb4777f-f50d-443f-9f95-dbfb11178234">
+            <entity Id="4f4270e0-f88e-411d-828a-8cf425ff68b4" name="DimItemsExtended" schema="realestate" isVersioned="false" ignoreViewCreation="false" extends="STDMM.DimItems">
+              <attributes>
+                <entityHasAttributes Id="3d3a99b9-c894-46c2-a052-4e636cc2e50f">
+                  <attribute Id="e6f73036-b242-4df5-bb6f-8cf84c78db67" name="CategoriaProduto" nameAndType="CategoriaProduto : Text" naturalKey="false" required="false" excludeFromStaging="false" excludeFromDw="false" sCDChangingAttribute="false" entityDateAttribute="false" isCustomDimensionFK="false" isLocalizable="false" excludeFromView="false" createDimensionAttribute="true" dimensionAttributeName="Categoria Produto" />
+                </entityHasAttributes>
+              </attributes>
+            </entity>
+          </entitiesGraphHasEntities>
+        </entities>
+        <externalEntities>
+          <entitiesGraphHasExternalEntities Id="44a2d8a8-6868-4953-b00a-ca3255fe7088">
+            <externalEntity Id="7eedd0d4-05d3-481c-b13d-d53c56e20b7a" name="DimItems" solutionReference="STDMM" externalEntityId="57447b00-5593-46bc-a334-199215e32084" />
+          </entitiesGraphHasExternalEntities>
+        </externalEntities>
+        <solutionReferences>
+          <entitiesGraphHasSolutionReferences Id="2be0a4df-e5c2-472e-ac52-23f9b9de9ea6">
+            <moduleReference Id="33781a24-2196-4945-a2ac-414786bd18b4" name="STDMM" solutionSchemaPath="C:\Program Files (x86)\PRIMAVERA\BusinessAnalytics110\Host\Solutions\STDMM\Schemas\SolutionSchema.xml" />
+          </entitiesGraphHasSolutionReferences>
+        </solutionReferences>
+      </entitiesGraph>
+    </solutionSchemaHasEntitiesGraph>
+  </entitiesGraph>
+  <modulesGraph>
+    <solutionSchemaHasModulesGraph Id="324f9840-f2db-450e-86b2-c17cb6527e6d">
+      <modulesGraph Id="02106c77-17d0-44c6-b13d-815cfb23e12b">
+        <schemasCollection>
+          <modulesGraphHasSchemas Id="7fdc3da3-165c-4c36-9a9b-f61522c57a26">
+            <schemasCollection Id="b7b0c7fb-62cb-443b-b9ce-ddbcfa4f7811">
+              <schemas>
+                <schemasCollectionHasSchemas Id="e02f391f-8b12-4869-83a2-831b50b4fecc">
+                  <schema Id="cb1fab32-4f2b-4d45-be19-d854ed5b7f80" name="realestate" />
+                </schemasCollectionHasSchemas>
+              </schemas>
+            </schemasCollection>
+          </modulesGraphHasSchemas>
+        </schemasCollection>
+        <sQLScriptsCollection>
+          <modulesGraphHasSQLScripts Id="8d60d147-0441-43e8-84d9-6f80cf1ddbfb">
+            <sQLScriptsCollection Id="03306a4a-8186-4cc5-bcf5-2293a13cba28">
+              <sQLScriptCreates>
+                <sQLScriptsCollectionHasSQLScriptCreates Id="00cd9822-7ae3-48b2-a51a-aa0c0045255b">
+                  <sQLScriptCreate Id="692bfd1a-5b6b-415a-9ba3-738758845c37" fileName="CreateIndicators.sql" />
+                </sQLScriptsCollectionHasSQLScriptCreates>
+                <sQLScriptsCollectionHasSQLScriptCreates Id="7cc9c611-358c-4ef3-a92b-7a4414d4170f">
+                  <sQLScriptCreate Id="dcd8636a-504b-4159-966a-03433fc8dda1" fileName="CreateDashboards.sql" />
+                </sQLScriptsCollectionHasSQLScriptCreates>
+                <sQLScriptsCollectionHasSQLScriptCreates Id="655fbc30-43ad-47be-bbad-9d9093082cf5">
+                  <sQLScriptCreate Id="0b9d4fb0-61c3-46d0-8db3-35ec26228ff5" fileName="OnCreateSolution.sql" />
+                </sQLScriptsCollectionHasSQLScriptCreates>
+              </sQLScriptCreates>
+              <sQLScriptUpdates>
+                <sQLScriptsCollectionHasSQLScriptUpdates Id="26bed698-18c2-4bd2-b9b3-31aa8766f2a9">
+                  <sQLScriptUpdate Id="3dd81974-83ce-4fec-9053-485013f69d3d" fileName="OnUpdateSolution.sql" />
+                </sQLScriptsCollectionHasSQLScriptUpdates>
+                <sQLScriptsCollectionHasSQLScriptUpdates Id="e9795834-6e48-4422-ab90-ce471b1c7396">
+                  <sQLScriptUpdate Id="11528365-6c2b-4deb-ac41-4293b3bb43a5" fileName="CreateIndicators.sql" />
+                </sQLScriptsCollectionHasSQLScriptUpdates>
+                <sQLScriptsCollectionHasSQLScriptUpdates Id="6a78910a-a9e9-4edb-8562-f5bcd4f32489">
+                  <sQLScriptUpdate Id="80746f99-80f5-469f-97da-b04ed89a4e53" fileName="CreateDashboards.sql" />
+                </sQLScriptsCollectionHasSQLScriptUpdates>
+              </sQLScriptUpdates>
+              <sQLScriptDeletes>
+                <sQLScriptsCollectionHasSQLScriptDeletes Id="06e45668-3232-4770-a31b-3f8f3549eb86">
+                  <sQLScriptDelete Id="26c8420a-4fb2-4840-bcd4-4bec78fb9005" fileName="DeleteIndicators.sql" />
+                </sQLScriptsCollectionHasSQLScriptDeletes>
+                <sQLScriptsCollectionHasSQLScriptDeletes Id="7feaac37-1689-4ac8-ab18-6fe2167c0b95">
+                  <sQLScriptDelete Id="30bba4b4-023e-479c-b65c-7227734ed72a" fileName="DeleteDashboards.sql" />
+                </sQLScriptsCollectionHasSQLScriptDeletes>
+                <sQLScriptsCollectionHasSQLScriptDeletes Id="6431d441-1ac7-4a0d-85d2-cca5211eaeb5">
+                  <sQLScriptDelete Id="3ecb2d01-42ac-4374-8e33-f9411285bafa" fileName="OnDeleteSolution.sql" />
+                </sQLScriptsCollectionHasSQLScriptDeletes>
+              </sQLScriptDeletes>
+            </sQLScriptsCollection>
+          </modulesGraphHasSQLScripts>
+        </sQLScriptsCollection>
+        <xmlaScriptsCollection>
+          <modulesGraphHasXmlaScripts Id="6f99e5fd-316d-40e9-8762-b6e92cb3d9bf">
+            <xmlaScriptsCollection Id="f2eb9714-3827-4fe2-8486-b3ef5d44cb36">
+              <xmlaScriptCreates>
+                <xmlaScriptsCollectionHasXmlaScriptCreates Id="bc4de69e-ddf4-4b6c-a23a-2bf4cfbaa073">
+                  <xmlaScriptCreate Id="7dc6ea2c-11af-420a-9ff2-b382cda8e816" fileName="OlapOnSolutionDeploy.xmla" />
+                </xmlaScriptsCollectionHasXmlaScriptCreates>
+              </xmlaScriptCreates>
+              <xmlaScriptUpdates>
+                <xmlaScriptsCollectionHasXmlaScriptUpdates Id="89d2ae34-03b2-4ac9-ab5e-9abc69259102">
+                  <xmlaScriptUpdate Id="b20d154c-3c65-4a34-994d-f11fb65558a0" fileName="OlapOnSolutionDeploy.xmla" />
+                </xmlaScriptsCollectionHasXmlaScriptUpdates>
+              </xmlaScriptUpdates>
+              <xmlaScriptDeletes>
+                <xmlaScriptsCollectionHasXmlaScriptDeletes Id="c29d6f72-0a75-4785-be27-1bb5800efdc9">
+                  <xmlaScriptDelete Id="03b0523e-0a57-4fe0-a0ed-c4f7c10a31fe" fileName="OlapOnSolutionUndeploy.xmla" />
+                </xmlaScriptsCollectionHasXmlaScriptDeletes>
+              </xmlaScriptDeletes>
+            </xmlaScriptsCollection>
+          </modulesGraphHasXmlaScripts>
+        </xmlaScriptsCollection>
+        <packagesCollection>
+          <modulesGraphHasPackages Id="79a34d3d-66d6-43fc-bcf9-5c5d84c4aede">
+            <packagesCollection Id="9bbfd3ec-ae37-46c9-a65d-4b4fdb9acc71">
+              <extractionPackages>
+                <packagesCollectionHasExtractionPackages Id="08d9d201-0aff-4d59-9fe7-6d4a91a98350">
+                  <extractionPackage Id="dcd9865f-0ad2-4655-96f4-9f5b583c9ac8" name="ExtDimAgentes" connectionString="Data Source=[ScenarioConfig:Server];Initial Catalog=[ScenarioConfig:Database];User Id=[ScenarioConfig:Username];Password=[ScenarioConfig:Password]" destinationEntity="realestate.DimAgentes" providerType="System.Data.SqlClient" selectStatement="SELECT * FROM [dbo].[vwBA_ExtDimAgentes] WHERE [Version] &gt;= ISNULL(@LastVersion, 0)">
+                    <genericDbSets>
+                      <packageReferenceHasGenericDbSets Id="6c28a2c4-245d-414c-9d12-91a138e469ba">
+                        <genericDbSetting Id="94a78e40-8396-415d-af78-12ca68017ef1" name="@LastVersion" type="Number" value="[Package:Version]" />
+                      </packageReferenceHasGenericDbSets>
+                    </genericDbSets>
+                    <mappings>
+                      <packageReferenceHasMappings Id="3fa4c026-1588-43e8-a672-e64681b13270">
+                        <mapping Id="622811ce-2b10-48fe-b72f-21bfe7020053" source="AgenteNK" destination="AgenteNK" destinationDescription="AgenteNK" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="dad4c2d9-f86c-45b8-b7d4-0c03c6901024">
+                        <mapping Id="e0263aa1-ccea-4fa9-a60c-f04d926858d4" source="Nome" destination="Nome" destinationDescription="Nome" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="374ea1d6-e367-4898-94ba-fbb3f60cf402">
+                        <mapping Id="25ec8ed7-b54d-40f0-bc7b-3670ea66e916" source="CompanyNK" destination="CompanyNK" destinationDescription="CompanyNK" />
+                      </packageReferenceHasMappings>
+                    </mappings>
+                    <resultMetadataExpressions>
+                      <packageReferenceHasResultMetadataExpressions Id="f9079957-7479-4326-b4ab-473d39c535d4">
+                        <resultMetadataExpression Id="19ee7c18-c008-486b-976d-9df37595192c">
+                          <taskPackages>
+                            <resultMetadataExpressionHasTaskPackages Id="85f26fc8-e18f-4c01-ab70-5896492cf17c">
+                              <taskPackage Id="ab240167-b624-4d7e-bafe-2037559206cb" expression="MAX(Version)" name="LastVersion" />
+                            </resultMetadataExpressionHasTaskPackages>
+                          </taskPackages>
+                        </resultMetadataExpression>
+                      </packageReferenceHasResultMetadataExpressions>
+                    </resultMetadataExpressions>
+                  </extractionPackage>
+                </packagesCollectionHasExtractionPackages>
+                <packagesCollectionHasExtractionPackages Id="f333a871-db4a-40c6-b929-48aac5686ea2">
+                  <extractionPackage Id="52cc9424-f3d1-4971-bfb2-556bb29cf116" name="ExtDimClientes" connectionString="Data Source=[ScenarioConfig:Server];Initial Catalog=[ScenarioConfig:Database];User Id=[ScenarioConfig:Username];Password=[ScenarioConfig:Password]" destinationEntity="realestate.DimClientes" providerType="System.Data.SqlClient" selectStatement="SELECT * FROM [dbo].[vwBA_ExtDimClientes] WHERE [Version] &gt;= ISNULL(@LastVersion, 0)">
+                    <genericDbSets>
+                      <packageReferenceHasGenericDbSets Id="ec339183-8d65-4b29-88f4-dc869007d8bb">
+                        <genericDbSetting Id="031959be-f960-4422-ae8b-2434d5135774" name="@LastVersion" type="Number" value="[Package:Version]" />
+                      </packageReferenceHasGenericDbSets>
+                    </genericDbSets>
+                    <mappings>
+                      <packageReferenceHasMappings Id="5a81a338-751b-47aa-92a1-b8bb467fb8d3">
+                        <mapping Id="f056d896-9466-412e-a2e3-0ccc79f63f1d" source="ClienteNK" destination="ClienteNK" destinationDescription="ClienteNK" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="edcc3c11-1fac-408e-bf7f-52be976cd215">
+                        <mapping Id="d4857968-552f-464c-b251-7700498f1144" source="Nome" destination="Nome" destinationDescription="Nome" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="2059837b-c1c5-4155-a7b7-410adffb3aba">
+                        <mapping Id="d909b13c-d70e-483b-91ae-4e8f4804a91c" source="Cidade" destination="Cidade" destinationDescription="Cidade" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="0335b0bb-a091-45e0-889a-364dec050a84">
+                        <mapping Id="c193f81d-fa80-47c5-858d-5b025056d5c3" source="CompanyNK" destination="CompanyNK" destinationDescription="CompanyNK" />
+                      </packageReferenceHasMappings>
+                    </mappings>
+                    <resultMetadataExpressions>
+                      <packageReferenceHasResultMetadataExpressions Id="fe078ce5-dc10-453b-b1f4-e9979453f755">
+                        <resultMetadataExpression Id="5243770c-18e6-4792-ab84-65f22339562f">
+                          <taskPackages>
+                            <resultMetadataExpressionHasTaskPackages Id="d2d13b9e-b1cd-4654-81f6-1db543093996">
+                              <taskPackage Id="f98426b2-27de-41b0-a661-04f5469c6137" expression="MAX(Version)" name="LastVersion" />
+                            </resultMetadataExpressionHasTaskPackages>
+                          </taskPackages>
+                        </resultMetadataExpression>
+                      </packageReferenceHasResultMetadataExpressions>
+                    </resultMetadataExpressions>
+                  </extractionPackage>
+                </packagesCollectionHasExtractionPackages>
+                <packagesCollectionHasExtractionPackages Id="003f4a90-adeb-4187-8b03-7499c929e47f">
+                  <extractionPackage Id="0173543d-12f5-445d-acd7-ebfa7d4ee80c" name="ExtDimImoveis" connectionString="Data Source=[ScenarioConfig:Server];Initial Catalog=[ScenarioConfig:Database];User Id=[ScenarioConfig:Username];Password=[ScenarioConfig:Password]" destinationEntity="realestate.DimImoveis" providerType="System.Data.SqlClient" selectStatement="SELECT * FROM [dbo].[vwBA_ExtDimImoveis] WHERE [Version] &gt;= ISNULL(@LastVersion, 0)">
+                    <genericDbSets>
+                      <packageReferenceHasGenericDbSets Id="501829e4-03c1-4f76-aab5-ad0655fb097e">
+                        <genericDbSetting Id="60a5058d-9c72-478f-9ebb-1f7a799c2c73" name="@LastVersion" type="Number" value="[Package:Version]" />
+                      </packageReferenceHasGenericDbSets>
+                    </genericDbSets>
+                    <mappings>
+                      <packageReferenceHasMappings Id="15ab84c7-a87f-4363-b8e2-778cea55e27b">
+                        <mapping Id="204a9065-728c-4deb-8091-b4c6ed929fe3" source="ImovelNK" destination="ImovelNK" destinationDescription="ImovelNK" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="0f3841e4-aba8-47ca-bf61-cea0cc07881e">
+                        <mapping Id="f683a502-11c7-46de-9069-945391dfb267" source="Localizacao" destination="Localizacao" destinationDescription="Localizacao" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="2b7fa7d0-3cd6-466d-8d88-5c5eabecd7a3">
+                        <mapping Id="6914a3a3-74f9-4f02-b7e5-1c5e1ecfcabb" source="Tipologia" destination="Tipologia" destinationDescription="Tipologia" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="5dff5933-8026-4081-8361-b77c8b170525">
+                        <mapping Id="027a428c-95e9-4bf8-b6c8-50dbc08dc3c5" source="CompanyNK" destination="CompanyNK" destinationDescription="CompanyNK" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="7130c870-d172-4661-baa2-c27df5a63d2f">
+                        <mapping Id="85350b9c-0b71-4001-a278-32b87410ff0a" source="ProprietarioNK" destination="ProprietarioNK" destinationDescription="Proprietario" />
+                      </packageReferenceHasMappings>
+                    </mappings>
+                    <resultMetadataExpressions>
+                      <packageReferenceHasResultMetadataExpressions Id="51812207-e970-42f4-bb94-dc98a2c808bb">
+                        <resultMetadataExpression Id="864be346-230e-4c95-b551-4e88e092c012">
+                          <taskPackages>
+                            <resultMetadataExpressionHasTaskPackages Id="2e9dad68-6a47-49d4-910c-4a08b789af1b">
+                              <taskPackage Id="15532614-a93c-4f4f-870e-ff7b9f3f833c" expression="MAX(Version)" name="LastVersion" />
+                            </resultMetadataExpressionHasTaskPackages>
+                          </taskPackages>
+                        </resultMetadataExpression>
+                      </packageReferenceHasResultMetadataExpressions>
+                    </resultMetadataExpressions>
+                  </extractionPackage>
+                </packagesCollectionHasExtractionPackages>
+                <packagesCollectionHasExtractionPackages Id="eb5298bc-7a04-43d5-a28f-73be373cb916">
+                  <extractionPackage Id="b727915c-7d87-4d58-8bb2-d45cfefb9b88" name="ExtFactVisitas" connectionString="Data Source=[ScenarioConfig:Server];Initial Catalog=[ScenarioConfig:Database];User Id=[ScenarioConfig:Username];Password=[ScenarioConfig:Password]" destinationEntity="realestate.FactVisitas" providerType="System.Data.SqlClient" selectStatement="SELECT * FROM [dbo].[vwBA_ExtFactVisitas] WHERE [Version] &gt;= ISNULL(@LastVersion, 0)">
+                    <genericDbSets>
+                      <packageReferenceHasGenericDbSets Id="f0982f25-e285-43bd-80ce-60263b8270e8">
+                        <genericDbSetting Id="8da0aa57-3cc7-4b0c-ae02-e51d9ed24357" name="@LastVersion" type="Number" value="[Package:Version]" />
+                      </packageReferenceHasGenericDbSets>
+                    </genericDbSets>
+                    <mappings>
+                      <packageReferenceHasMappings Id="6a08ebbf-7236-4f8b-90b2-97e75b8b243b">
+                        <mapping Id="bdea6280-d1d1-45d2-a3c7-c34e0a54f120" source="FactVisitaNK" destination="FactVisitaNK" destinationDescription="FactVisitaNK" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="cc2353f7-bd70-4f31-b044-05e105a696a2">
+                        <mapping Id="b5eec4de-10f6-4211-8213-eb945522d227" source="DataId" destination="DataId" destinationDescription="DataId" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="6fff01d5-541b-4863-a4c2-de56e2bce1d3">
+                        <mapping Id="f1da81bc-28db-4e6f-abb5-fd499cbcb23e" source="Avaliacao" destination="Avaliacao" destinationDescription="Avaliacao" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="47832f9b-ecc2-419a-b32a-82cdce428e75">
+                        <mapping Id="619914c4-a54f-4066-8f8f-968a12fef60a" source="Caracteristica" destination="Caracteristica" destinationDescription="Caracteristica" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="ad327587-1c7d-4372-a9be-b89889ff1bb6">
+                        <mapping Id="5fa1024d-6452-4265-b16b-0b3bada6a3e6" source="IdVisita" destination="IdVisita" destinationDescription="IdVisita" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="f3cbdca5-633a-4186-9751-60e5bedb6980">
+                        <mapping Id="e41afcf5-6286-40fe-a7bc-9c04976a9567" source="AgenteNK" destination="AgenteNK" destinationDescription="Agente" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="19f32e0a-9b66-45d6-b1b1-60668b9bb93a">
+                        <mapping Id="fbe2288d-2508-4932-8149-558d0d2d69b7" source="ImovelNK" destination="ImovelNK" destinationDescription="Imovel" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="886ac56d-d031-4ef6-b7f8-09ed3a082c62">
+                        <mapping Id="5efd3a5c-86a0-4af3-9e74-57b63d03532e" source="ClienteNK" destination="ClienteNK" destinationDescription="Cliente" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="c677c29f-1c11-4418-a718-e5fb3ace46c4">
+                        <mapping Id="1c9320d8-4fd6-4a80-b17f-afeefbda09d8" source="CompanyNK" destination="CompanyNK" destinationDescription="CompanyNK" />
+                      </packageReferenceHasMappings>
+                    </mappings>
+                    <resultMetadataExpressions>
+                      <packageReferenceHasResultMetadataExpressions Id="76b48744-9a12-454d-a102-bca7b9eb7206">
+                        <resultMetadataExpression Id="7b56afd3-c102-4755-8971-94243544fbbe">
+                          <taskPackages>
+                            <resultMetadataExpressionHasTaskPackages Id="5aa6df98-a68f-42de-8226-c2e1c75ded66">
+                              <taskPackage Id="1278aa50-df5c-42e9-9cd9-302a9c8cb87d" expression="MAX(Version)" name="LastVersion" />
+                            </resultMetadataExpressionHasTaskPackages>
+                          </taskPackages>
+                        </resultMetadataExpression>
+                      </packageReferenceHasResultMetadataExpressions>
+                    </resultMetadataExpressions>
+                  </extractionPackage>
+                </packagesCollectionHasExtractionPackages>
+                <packagesCollectionHasExtractionPackages Id="e81b3d2e-3df2-4a5b-a5d5-160869aa000c">
+                  <extractionPackage Id="eddc3787-1642-47fa-b17a-a9358e77211b" name="ExtFactVendas" connectionString="Data Source=[ScenarioConfig:Server];Initial Catalog=[ScenarioConfig:Database];User Id=[ScenarioConfig:Username];Password=[ScenarioConfig:Password]" destinationEntity="realestate.FactVendas" providerType="System.Data.SqlClient" selectStatement="SELECT * FROM [dbo].[vwBA_ExtFactVendas] WHERE [Version] &gt;= ISNULL(@LastVersion, 0)">
+                    <genericDbSets>
+                      <packageReferenceHasGenericDbSets Id="6dd6dc4c-d5b6-4e71-bb40-d9f969389925">
+                        <genericDbSetting Id="6c1e4e9f-6071-4f23-b70b-78c030dc8055" name="@LastVersion" type="Number" value="[Package:Version]" />
+                      </packageReferenceHasGenericDbSets>
+                    </genericDbSets>
+                    <mappings>
+                      <packageReferenceHasMappings Id="743b519a-3c0a-4d67-b003-4500aad94451">
+                        <mapping Id="64ab00d2-48d4-47d6-8429-531b1873e862" source="FactVendaNK" destination="FactVendaNK" destinationDescription="FactVendaNK" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="31c2cd2c-a2a4-4834-bd40-a9b5be795d56">
+                        <mapping Id="100362a7-dbfe-4bba-bafd-4e6440ebdc43" source="DataId" destination="DataId" destinationDescription="DataId" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="9172e6db-23c6-469d-b14b-24f7a67df01b">
+                        <mapping Id="f4f3ef8a-c501-4113-88bd-0dd76f07b0f8" source="ValorVenda" destination="ValorVenda" destinationDescription="ValorVenda" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="c683076c-9922-4872-b54d-3fd0a6be698e">
+                        <mapping Id="59da62f9-2925-440b-b1da-6f88eda63ae6" source="ValorComissao" destination="ValorComissao" destinationDescription="ValorComissao" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="7c6a3d41-e02c-4f9d-abcb-98022017191a">
+                        <mapping Id="eff248da-0a3d-49f9-9ae8-6a3bbd9cb102" source="AgenteNK" destination="AgenteNK" destinationDescription="Agente" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="c3e049c3-18fc-4487-a4e3-d15b02a4c6f8">
+                        <mapping Id="94b1e4cd-40ce-439e-8271-019ef0f09071" source="ImovelNK" destination="ImovelNK" destinationDescription="Imovel" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="a3a517bc-18df-406c-a402-b3f9cb388038">
+                        <mapping Id="095597a2-09d0-49fb-b196-3f2ab9e18043" source="ClienteNK" destination="ClienteNK" destinationDescription="Cliente" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="0aa7c86a-cd37-4c0e-a168-e0567597fc9d">
+                        <mapping Id="71953199-eecd-44fe-ba44-7c463dc9e5bf" source="CompanyNK" destination="CompanyNK" destinationDescription="CompanyNK" />
+                      </packageReferenceHasMappings>
+                    </mappings>
+                    <resultMetadataExpressions>
+                      <packageReferenceHasResultMetadataExpressions Id="81c884bb-d72a-47d9-a554-eb1611aa5ba2">
+                        <resultMetadataExpression Id="016e5a64-3d30-4adf-8769-127faaa5df6c">
+                          <taskPackages>
+                            <resultMetadataExpressionHasTaskPackages Id="eda5c9b6-e674-46f4-b82c-ee1391da317c">
+                              <taskPackage Id="8ba4354f-04db-425a-987e-15a9423d6930" expression="MAX(Version)" name="LastVersion" />
+                            </resultMetadataExpressionHasTaskPackages>
+                          </taskPackages>
+                        </resultMetadataExpression>
+                      </packageReferenceHasResultMetadataExpressions>
+                    </resultMetadataExpressions>
+                  </extractionPackage>
+                </packagesCollectionHasExtractionPackages>
+                <packagesCollectionHasExtractionPackages Id="decfd3c7-d0a9-4c6e-8e6f-defd21475796">
+                  <extractionPackage Id="f7d81d9e-dad5-486d-9950-927fa53d8aa0" name="ExtDimItemsExtended" connectionString="Data Source=[ScenarioConfig:Server];Initial Catalog=[ScenarioConfig:Database];User Id=[ScenarioConfig:Username];Password=[ScenarioConfig:Password]" destinationEntity="realestate.DimItemsExtended" providerType="System.Data.SqlClient" selectStatement="SELECT * FROM [dbo].[vwBA_EXxtDimItemsExtended] WHERE [Version] &gt;= ISNULL(@LastVersion, 0)">
+                    <genericDbSets>
+                      <packageReferenceHasGenericDbSets Id="b0efb4de-8cf1-4ce0-b4c5-7271b4eb07b9">
+                        <genericDbSetting Id="58714f2f-5918-4c60-a3c4-9df7ef5be3ca" name="@LastVersion" type="Number" value="[Package:Version]" />
+                      </packageReferenceHasGenericDbSets>
+                    </genericDbSets>
+                    <mappings>
+                      <packageReferenceHasMappings Id="719e541f-5519-4f80-a000-05c98a232812">
+                        <mapping Id="ca87af40-6122-45ab-a69e-9b5b0e1f1281" source="CategoriaProduto" destination="CategoriaProduto" destinationDescription="CategoriaProduto" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="0c371a4d-5687-4e7e-93f1-ce8f446d555e">
+                        <mapping Id="25827fee-21a6-4ca5-beb4-5d8112734682" source="CompanyNK" destination="CompanyNK" destinationDescription="CompanyNK" />
+                      </packageReferenceHasMappings>
+                      <packageReferenceHasMappings Id="bfd30686-4007-4934-b2ca-ca7de0fe77ff">
+                        <mapping Id="d0c02239-23d2-4051-878a-7ab11f083986" source="ItemNK" destination="ItemNK" destinationDescription="ItemNK" />
+                      </packageReferenceHasMappings>
+                    </mappings>
+                    <resultMetadataExpressions>
+                      <packageReferenceHasResultMetadataExpressions Id="577a39e9-9eea-4c21-a9e3-e683b705b9cc">
+                        <resultMetadataExpression Id="fe61bce2-9604-4fd5-ba21-3215d8f8e443">
+                          <taskPackages>
+                            <resultMetadataExpressionHasTaskPackages Id="77b58ade-e549-47fc-93fa-37b25813c33a">
+                              <taskPackage Id="ddd99ea4-f855-4c4b-b534-171d52a650cd" expression="MAX(Version)" name="LastVersion" />
+                            </resultMetadataExpressionHasTaskPackages>
+                          </taskPackages>
+                        </resultMetadataExpression>
+                      </packageReferenceHasResultMetadataExpressions>
+                    </resultMetadataExpressions>
+                  </extractionPackage>
+                </packagesCollectionHasExtractionPackages>
+              </extractionPackages>
+              <integrationPackages>
+                <packagesCollectionHasIntegrationPackages Id="b8cd8ca5-8b03-4a2f-a01e-35dec71312d9">
+                  <integrationPackage Id="dfd9fa21-aa28-45a3-b2ee-b86f4c810140" name="IntDimAgentes" destinationEntity="realestate.DimAgentes" selectStatement="SELECT * FROM [[ScenarioConfig:ST_Database]].[realestate].[DimAgentes]" executionTimeout="3600">
+                    <processObjects>
+                      <packageReferenceHasProcessObjects Id="adf8770d-13b4-43f3-9b83-53dd889298b7">
+                        <processObject Id="cb0f6ebf-2cee-49ba-9564-65cd53d06185" objectId="Agente" objectType="Dimension" triggerProcessing="true" />
+                      </packageReferenceHasProcessObjects>
+                    </processObjects>
+                  </integrationPackage>
+                </packagesCollectionHasIntegrationPackages>
+                <packagesCollectionHasIntegrationPackages Id="65e18f8b-92b9-49c1-be39-be53b8d7478f">
+                  <integrationPackage Id="b35dfa74-ef66-448d-98cc-0b6fc9be2a92" name="IntDimClientes" destinationEntity="realestate.DimClientes" selectStatement="SELECT * FROM [[ScenarioConfig:ST_Database]].[realestate].[DimClientes]" executionTimeout="3600">
+                    <processObjects>
+                      <packageReferenceHasProcessObjects Id="72f9b76d-ba5b-4d67-989f-800e41ce8468">
+                        <processObject Id="d8280860-58e4-4233-b7ac-50856748632a" objectId="Cliente" objectType="Dimension" triggerProcessing="true" />
+                      </packageReferenceHasProcessObjects>
+                    </processObjects>
+                  </integrationPackage>
+                </packagesCollectionHasIntegrationPackages>
+                <packagesCollectionHasIntegrationPackages Id="d30636eb-cf8e-42c0-a679-8219fc573e00">
+                  <integrationPackage Id="e1faa75c-bd78-4159-80ce-ca4c3d335229" name="IntDimImoveis" destinationEntity="realestate.DimImoveis" selectStatement="SELECT * FROM [[ScenarioConfig:ST_Database]].[realestate].[DimImoveis]" executionTimeout="3600">
+                    <processObjects>
+                      <packageReferenceHasProcessObjects Id="ad36de5e-8c1d-41a0-9994-b1707f238ebf">
+                        <processObject Id="a69d508f-835e-4a4d-a63a-da12731a7701" objectId="Imóvel" objectType="Dimension" triggerProcessing="true" />
+                      </packageReferenceHasProcessObjects>
+                    </processObjects>
+                  </integrationPackage>
+                </packagesCollectionHasIntegrationPackages>
+                <packagesCollectionHasIntegrationPackages Id="17e56644-9d50-482d-988b-82c2ca67221d">
+                  <integrationPackage Id="df90ea50-db90-4b1e-8498-da4529fe8f4a" name="IntFactVisitas" destinationEntity="realestate.FactVisitas" selectStatement="SELECT * FROM [[ScenarioConfig:ST_Database]].[realestate].[FactVisitas]" executionTimeout="3600" />
+                </packagesCollectionHasIntegrationPackages>
+                <packagesCollectionHasIntegrationPackages Id="9594c91b-e46b-4b05-9e14-4296c9284f28">
+                  <integrationPackage Id="a1b10685-f885-4d6c-8b26-7c74d8d16613" name="IntFactVendas" destinationEntity="realestate.FactVendas" selectStatement="SELECT * FROM [[ScenarioConfig:ST_Database]].[realestate].[FactVendas]" executionTimeout="3600">
+                    <processObjects>
+                      <packageReferenceHasProcessObjects Id="4e120954-64b5-4a57-bd21-470d8929a29a">
+                        <processObject Id="5c57261b-aa90-469c-b8e0-61665a9d26b3" objectId="Detalhe Vendas" objectType="Dimension" triggerProcessing="true" />
+                      </packageReferenceHasProcessObjects>
+                      <packageReferenceHasProcessObjects Id="8999efb0-4b52-478e-b074-e1417c1f65b5">
+                        <processObject Id="63cc0ff8-8baa-4aa0-999f-fd4b117d04a9" objectId="Detalhe Visitas" objectType="Dimension" triggerProcessing="true" />
+                      </packageReferenceHasProcessObjects>
+                      <packageReferenceHasProcessObjects Id="2811a3a1-e9df-4288-a477-8ad8e1e40e44">
+                        <processObject Id="04ae1b4b-0e24-4557-9cde-4dcb5f990ce6" objectId="Real Estate" objectType="Cube" triggerProcessing="true" />
+                      </packageReferenceHasProcessObjects>
+                    </processObjects>
+                  </integrationPackage>
+                </packagesCollectionHasIntegrationPackages>
+                <packagesCollectionHasIntegrationPackages Id="73d4aec2-6c66-4dc3-b9ff-62da6ad22c76">
+                  <integrationPackage Id="dab449e3-0320-46c8-9d32-ccb8a1b65478" name="IntDimItemsExtended" destinationEntity="realestate.DimItemsExtended" selectStatement="SELECT * FROM [[ScenarioConfig:ST_Database]].[realestate].[DimItemsExtended]">
+                    <processObjects>
+                      <packageReferenceHasProcessObjects Id="17305191-8616-4598-8d88-7758879f1ad7">
+                        <processObject Id="7f695822-f715-4d4e-8a5e-ea89d1c6ae9e" objectId="Item" objectType="Dimension" triggerProcessing="true" />
+                      </packageReferenceHasProcessObjects>
+                    </processObjects>
+                  </integrationPackage>
+                </packagesCollectionHasIntegrationPackages>
+              </integrationPackages>
+            </packagesCollection>
+          </modulesGraphHasPackages>
+        </packagesCollection>
+        <deployMetadataCollection>
+          <modulesGraphHasDeploymentMetadatas Id="82cb0a34-e4c4-4d6d-8d4b-49c265d3244e">
+            <deployMetadataCollection Id="0afc9821-bc89-433c-919d-1178dbbecaad" />
+          </modulesGraphHasDeploymentMetadatas>
+        </deployMetadataCollection>
+      </modulesGraph>
+    </solutionSchemaHasModulesGraph>
+  </modulesGraph>
+</solutionSchema>

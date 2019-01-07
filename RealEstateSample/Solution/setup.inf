@@ -1,0 +1,29 @@
+;*** BEGIN **********************************************************
+;**                                                                **
+;** Automatically generated on: Fri Sep 21 15:47:16 2018           **
+;**                                                                **
+;** MakeCAB Version: 10.0.10011.16506                                 **
+;**                                                                **
+;*** BEGIN **********************************************************
+[disk list]
+1,Disk 1
+[cabinet list]
+1,1,RealEstate.bap
+[file list]
+1,1,Assemblies\RealEstate.dll,5120
+1,1,Schemas\SolutionSchema.xml,19859
+1,1,Schemas\MultiDimensionalData.xml,17349
+1,1,Scripts\OnCreateSolution.sql,3
+1,1,Scripts\OnUpdateSolution.sql,3
+1,1,Scripts\OnDeleteSolution.sql,3
+1,1,Scripts\CreateIndicators.sql,31
+1,1,Scripts\DeleteIndicators.sql,31
+1,1,Scripts\CreateDashboards.sql,31
+1,1,Scripts\DeleteDashboards.sql,31
+1,1,Scripts\OlapOnSolutionDeploy.xmla,109772
+1,1,Scripts\OlapOnSolutionUndeploy.xmla,1676
+;*** END ************************************************************
+;**                                                                **
+;** Automatically generated on: Fri Sep 21 15:47:16 2018           **
+;**                                                                **
+;*** END ************************************************************

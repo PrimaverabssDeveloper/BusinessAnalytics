@@ -1,0 +1,250 @@
+﻿
+<SolutionSchema xmlns="http://schemas.primaverabss.com/BusinessAnalytics/Solution" Name="RealEstate" Version="1.0" Description="RealEstate">
+  <RelationalData xmlns="http://schemas.primaverabss.com/BusinessAnalytics/RelationalData">
+    <Schemas>
+      <Schema Name="realestate" />
+    </Schemas>
+    <Entities>
+      <Entity Name="DimClientes" CatalogType="Both" Schema="realestate" CompanyDependent="true" IntegrationStrategy="SCD1" DeleteCriteria="" IsVersioned="false" IgnoreViewCreation="false">
+        <EntityAttributes>
+          <EntityAttribute Name="ClienteNK" NaturalKey="true" Type="Text" Required="true" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+          <EntityAttribute Name="Nome" NaturalKey="false" Type="LongText" Required="false" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+          <EntityAttribute Name="Cidade" NaturalKey="false" Type="Text" Required="false" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+        </EntityAttributes>
+        <Purge Enabled="true" />
+      </Entity>
+      <Entity Name="DimAgentes" CatalogType="Both" Schema="realestate" CompanyDependent="true" IntegrationStrategy="SCD1" DeleteCriteria="" IsVersioned="false" IgnoreViewCreation="false">
+        <EntityAttributes>
+          <EntityAttribute Name="AgenteNK" NaturalKey="true" Type="Text" Required="true" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+          <EntityAttribute Name="Nome" NaturalKey="false" Type="LongText" Required="false" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+        </EntityAttributes>
+        <Purge Enabled="true" />
+      </Entity>
+      <Entity Name="DimImoveis" CatalogType="Both" Schema="realestate" CompanyDependent="true" IntegrationStrategy="SCD1" DeleteCriteria="" IsVersioned="false" IgnoreViewCreation="false">
+        <EntityAttributes>
+          <EntityAttribute Name="ImovelNK" NaturalKey="true" Type="Text" Required="true" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+          <EntityAttribute Name="Localizacao" NaturalKey="false" Type="Text" Required="false" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+          <EntityAttribute Name="Tipologia" NaturalKey="false" Type="ShortText" Required="false" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+        </EntityAttributes>
+        <EntityRelations>
+          <EntityRelation Name="Proprietario" EnforceFKConstraint="false" RelatedEntity="DimClientes" Required="false" />
+        </EntityRelations>
+        <Purge Enabled="true" />
+      </Entity>
+      <Entity Name="FactVisitas" CatalogType="Both" Schema="realestate" CompanyDependent="true" IntegrationStrategy="SCD1" DeleteCriteria="" IsVersioned="false" IgnoreViewCreation="false">
+        <EntityAttributes>
+          <EntityAttribute Name="FactVisitaNK" NaturalKey="true" Type="Text" Required="true" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+          <EntityAttribute Name="DataId" NaturalKey="false" Type="Number" Required="false" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+          <EntityAttribute Name="Avaliacao" NaturalKey="false" Type="Number" Required="false" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+          <EntityAttribute Name="Caracteristica" NaturalKey="false" Type="Text" Required="false" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+          <EntityAttribute Name="IdVisita" NaturalKey="false" Type="Text" Required="false" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+        </EntityAttributes>
+        <EntityRelations>
+          <EntityRelation Name="Agente" EnforceFKConstraint="false" RelatedEntity="DimAgentes" Required="false" />
+          <EntityRelation Name="Imovel" EnforceFKConstraint="false" RelatedEntity="DimImoveis" Required="false" />
+          <EntityRelation Name="Cliente" EnforceFKConstraint="false" RelatedEntity="DimClientes" Required="false" />
+        </EntityRelations>
+        <Purge Enabled="true" />
+      </Entity>
+      <Entity Name="FactVendas" CatalogType="Both" Schema="realestate" CompanyDependent="true" IntegrationStrategy="SCD1" DeleteCriteria="" IsVersioned="false" IgnoreViewCreation="false">
+        <EntityAttributes>
+          <EntityAttribute Name="FactVendaNK" NaturalKey="true" Type="Text" Required="true" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+          <EntityAttribute Name="DataId" NaturalKey="false" Type="Number" Required="false" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+          <EntityAttribute Name="ValorVenda" NaturalKey="false" Type="Decimal" Required="false" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+          <EntityAttribute Name="ValorComissao" NaturalKey="false" Type="Decimal" Required="false" ExcludeFromStaging="false" ExcludeFromDw="false" SCDChangingAttribute="false" EntityDateAttribute="false" IsCustomDimensionFK="false" IsLocalizable="false" ExcludeFromView="false" />
+        </EntityAttributes>
+        <CalculatedAttributes>
+          <CalculatedAttribute Name="ValorTotal" Formula="ValorVenda + ValorComissao" />
+        </CalculatedAttributes>
+        <EntityRelations>
+          <EntityRelation Name="Agente" EnforceFKConstraint="false" RelatedEntity="DimAgentes" Required="false" />
+          <EntityRelation Name="Imovel" EnforceFKConstraint="false" RelatedEntity="DimImoveis" Required="false" />
+          <EntityRelation Name="Cliente" EnforceFKConstraint="false" RelatedEntity="DimClientes" Required="false" />
+        </EntityRelations>
+        <Purge Enabled="true" />
+      </Entity>
+    </Entities>
+    <ExtendedEntities>
+      <ExtendedEntity SourceSchema="STDMM" SourceEntity="DimItems" Name="DimItemsExtended" CatalogType="Both" Schema="realestate" CompanyDependent="true" IntegrationStrategy="SCD1" DeleteCriteria="" IsVersioned="false" IgnoreViewCreation="false">
+        <EntityAttributes>
+          <EntityAttribute Name="CategoriaProduto" Type="Text" Required="false" ExcludeFromView="false" CreateDimensionAttribute="true" DimensionAttributeName="Categoria Produto" />
+        </EntityAttributes>
+      </ExtendedEntity>
+    </ExtendedEntities>
+  </RelationalData>
+  <MultiDimensionalData xmlns="http://schemas.primaverabss.com/BusinessAnalytics/MultiDimensionalData" File="MultiDimensionalData.xml" />
+  <SQLScripts>
+    <SQLScript FileName="CreateIndicators.sql" CatalogType="DwOnly" ExecutionContext="OnCreateSolution" />
+    <SQLScript FileName="CreateDashboards.sql" CatalogType="DwOnly" ExecutionContext="OnCreateSolution" />
+    <SQLScript FileName="OnCreateSolution.sql" CatalogType="DwOnly" ExecutionContext="OnCreateSolution" />
+    <SQLScript FileName="OnUpdateSolution.sql" CatalogType="DwOnly" ExecutionContext="OnUpdateSolution" />
+    <SQLScript FileName="CreateIndicators.sql" CatalogType="DwOnly" ExecutionContext="OnUpdateSolution" />
+    <SQLScript FileName="CreateDashboards.sql" CatalogType="DwOnly" ExecutionContext="OnUpdateSolution" />
+    <SQLScript FileName="DeleteIndicators.sql" CatalogType="DwOnly" ExecutionContext="OnDeleteSolution" />
+    <SQLScript FileName="DeleteDashboards.sql" CatalogType="DwOnly" ExecutionContext="OnDeleteSolution" />
+    <SQLScript FileName="OnDeleteSolution.sql" CatalogType="DwOnly" ExecutionContext="OnDeleteSolution" />
+  </SQLScripts>
+  <XmlaScripts>
+    <XmlaScript FileName="OlapOnSolutionDeploy.xmla" ExecutionContext="OnCreateSolution" />
+    <XmlaScript FileName="OlapOnSolutionDeploy.xmla" ExecutionContext="OnUpdateSolution" />
+    <XmlaScript FileName="OlapOnSolutionUndeploy.xmla" ExecutionContext="OnDeleteSolution" />
+  </XmlaScripts>
+  <PackageMetadata xmlns="http://schemas.primaverabss.com/BusinessAnalytics/PackageMetadata">
+    <Package Name="ExtDimAgentes" ConnectionString="Data Source=[ScenarioConfig:Server];Initial Catalog=[ScenarioConfig:Database];User Id=[ScenarioConfig:Username];Password=[ScenarioConfig:Password]" DestinationEntity="realestate.DimAgentes" ExecutionContext="Extraction" ProviderType="System.Data.SqlClient" SelectStatement="SELECT * FROM [dbo].[vwBA_ExtDimAgentes] WHERE [Version] &gt;= ISNULL(@LastVersion, 0)" Type="GenericDb">
+      <GenericDbSettings>
+        <Parameters>
+          <Parameter Name="@LastVersion" Type="Number" Value="[Package:Version]" />
+        </Parameters>
+      </GenericDbSettings>
+      <Mappings>
+        <Mapping Source="AgenteNK" Destination="AgenteNK" />
+        <Mapping Source="Nome" Destination="Nome" />
+        <Mapping Source="CompanyNK" Destination="CompanyNK" />
+      </Mappings>
+      <ResultMetadataExpressions>
+        <TaskPackage>
+          <Properties>
+            <Property Name="LastVersion" Expression="MAX(Version)" />
+          </Properties>
+        </TaskPackage>
+      </ResultMetadataExpressions>
+    </Package>
+    <Package Name="ExtDimClientes" ConnectionString="Data Source=[ScenarioConfig:Server];Initial Catalog=[ScenarioConfig:Database];User Id=[ScenarioConfig:Username];Password=[ScenarioConfig:Password]" DestinationEntity="realestate.DimClientes" ExecutionContext="Extraction" ProviderType="System.Data.SqlClient" SelectStatement="SELECT * FROM [dbo].[vwBA_ExtDimClientes] WHERE [Version] &gt;= ISNULL(@LastVersion, 0)" Type="GenericDb">
+      <GenericDbSettings>
+        <Parameters>
+          <Parameter Name="@LastVersion" Type="Number" Value="[Package:Version]" />
+        </Parameters>
+      </GenericDbSettings>
+      <Mappings>
+        <Mapping Source="ClienteNK" Destination="ClienteNK" />
+        <Mapping Source="Nome" Destination="Nome" />
+        <Mapping Source="Cidade" Destination="Cidade" />
+        <Mapping Source="CompanyNK" Destination="CompanyNK" />
+      </Mappings>
+      <ResultMetadataExpressions>
+        <TaskPackage>
+          <Properties>
+            <Property Name="LastVersion" Expression="MAX(Version)" />
+          </Properties>
+        </TaskPackage>
+      </ResultMetadataExpressions>
+    </Package>
+    <Package Name="ExtDimImoveis" ConnectionString="Data Source=[ScenarioConfig:Server];Initial Catalog=[ScenarioConfig:Database];User Id=[ScenarioConfig:Username];Password=[ScenarioConfig:Password]" DestinationEntity="realestate.DimImoveis" ExecutionContext="Extraction" ProviderType="System.Data.SqlClient" SelectStatement="SELECT * FROM [dbo].[vwBA_ExtDimImoveis] WHERE [Version] &gt;= ISNULL(@LastVersion, 0)" Type="GenericDb">
+      <GenericDbSettings>
+        <Parameters>
+          <Parameter Name="@LastVersion" Type="Number" Value="[Package:Version]" />
+        </Parameters>
+      </GenericDbSettings>
+      <Mappings>
+        <Mapping Source="ImovelNK" Destination="ImovelNK" />
+        <Mapping Source="Localizacao" Destination="Localizacao" />
+        <Mapping Source="Tipologia" Destination="Tipologia" />
+        <Mapping Source="CompanyNK" Destination="CompanyNK" />
+        <Mapping Source="ProprietarioNK" Destination="ProprietarioNK" />
+      </Mappings>
+      <ResultMetadataExpressions>
+        <TaskPackage>
+          <Properties>
+            <Property Name="LastVersion" Expression="MAX(Version)" />
+          </Properties>
+        </TaskPackage>
+      </ResultMetadataExpressions>
+    </Package>
+    <Package Name="ExtFactVisitas" ConnectionString="Data Source=[ScenarioConfig:Server];Initial Catalog=[ScenarioConfig:Database];User Id=[ScenarioConfig:Username];Password=[ScenarioConfig:Password]" DestinationEntity="realestate.FactVisitas" ExecutionContext="Extraction" ProviderType="System.Data.SqlClient" SelectStatement="SELECT * FROM [dbo].[vwBA_ExtFactVisitas] WHERE [Version] &gt;= ISNULL(@LastVersion, 0)" Type="GenericDb">
+      <GenericDbSettings>
+        <Parameters>
+          <Parameter Name="@LastVersion" Type="Number" Value="[Package:Version]" />
+        </Parameters>
+      </GenericDbSettings>
+      <Mappings>
+        <Mapping Source="FactVisitaNK" Destination="FactVisitaNK" />
+        <Mapping Source="DataId" Destination="DataId" />
+        <Mapping Source="Avaliacao" Destination="Avaliacao" />
+        <Mapping Source="Caracteristica" Destination="Caracteristica" />
+        <Mapping Source="IdVisita" Destination="IdVisita" />
+        <Mapping Source="AgenteNK" Destination="AgenteNK" />
+        <Mapping Source="ImovelNK" Destination="ImovelNK" />
+        <Mapping Source="ClienteNK" Destination="ClienteNK" />
+        <Mapping Source="CompanyNK" Destination="CompanyNK" />
+      </Mappings>
+      <ResultMetadataExpressions>
+        <TaskPackage>
+          <Properties>
+            <Property Name="LastVersion" Expression="MAX(Version)" />
+          </Properties>
+        </TaskPackage>
+      </ResultMetadataExpressions>
+    </Package>
+    <Package Name="ExtFactVendas" ConnectionString="Data Source=[ScenarioConfig:Server];Initial Catalog=[ScenarioConfig:Database];User Id=[ScenarioConfig:Username];Password=[ScenarioConfig:Password]" DestinationEntity="realestate.FactVendas" ExecutionContext="Extraction" ProviderType="System.Data.SqlClient" SelectStatement="SELECT * FROM [dbo].[vwBA_ExtFactVendas] WHERE [Version] &gt;= ISNULL(@LastVersion, 0)" Type="GenericDb">
+      <GenericDbSettings>
+        <Parameters>
+          <Parameter Name="@LastVersion" Type="Number" Value="[Package:Version]" />
+        </Parameters>
+      </GenericDbSettings>
+      <Mappings>
+        <Mapping Source="FactVendaNK" Destination="FactVendaNK" />
+        <Mapping Source="DataId" Destination="DataId" />
+        <Mapping Source="ValorVenda" Destination="ValorVenda" />
+        <Mapping Source="ValorComissao" Destination="ValorComissao" />
+        <Mapping Source="AgenteNK" Destination="AgenteNK" />
+        <Mapping Source="ImovelNK" Destination="ImovelNK" />
+        <Mapping Source="ClienteNK" Destination="ClienteNK" />
+        <Mapping Source="CompanyNK" Destination="CompanyNK" />
+      </Mappings>
+      <ResultMetadataExpressions>
+        <TaskPackage>
+          <Properties>
+            <Property Name="LastVersion" Expression="MAX(Version)" />
+          </Properties>
+        </TaskPackage>
+      </ResultMetadataExpressions>
+    </Package>
+    <Package Name="ExtDimItemsExtended" ConnectionString="Data Source=[ScenarioConfig:Server];Initial Catalog=[ScenarioConfig:Database];User Id=[ScenarioConfig:Username];Password=[ScenarioConfig:Password]" DestinationEntity="realestate.DimItemsExtended" ExecutionContext="Extraction" ProviderType="System.Data.SqlClient" SelectStatement="SELECT * FROM [dbo].[vwBA_EXxtDimItemsExtended] WHERE [Version] &gt;= ISNULL(@LastVersion, 0)" Type="GenericDb">
+      <GenericDbSettings>
+        <Parameters>
+          <Parameter Name="@LastVersion" Type="Number" Value="[Package:Version]" />
+        </Parameters>
+      </GenericDbSettings>
+      <Mappings>
+        <Mapping Source="CategoriaProduto" Destination="CategoriaProduto" />
+        <Mapping Source="CompanyNK" Destination="CompanyNK" />
+        <Mapping Source="ItemNK" Destination="ItemNK" />
+      </Mappings>
+      <ResultMetadataExpressions>
+        <TaskPackage>
+          <Properties>
+            <Property Name="LastVersion" Expression="MAX(Version)" />
+          </Properties>
+        </TaskPackage>
+      </ResultMetadataExpressions>
+    </Package>
+    <Package Name="IntDimAgentes" DestinationEntity="realestate.DimAgentes" ExecutionContext="Integration" SelectStatement="SELECT * FROM [[ScenarioConfig:ST_Database]].[realestate].[DimAgentes]" ExecutionTimeout="3600" Type="GenericIntegration">
+      <ProcessObjects>
+        <ProcessObject ObjectId="Agente" ObjectType="Dimension" TriggerProcessing="true" />
+      </ProcessObjects>
+    </Package>
+    <Package Name="IntDimClientes" DestinationEntity="realestate.DimClientes" ExecutionContext="Integration" SelectStatement="SELECT * FROM [[ScenarioConfig:ST_Database]].[realestate].[DimClientes]" ExecutionTimeout="3600" Type="GenericIntegration">
+      <ProcessObjects>
+        <ProcessObject ObjectId="Cliente" ObjectType="Dimension" TriggerProcessing="true" />
+      </ProcessObjects>
+    </Package>
+    <Package Name="IntDimImoveis" DestinationEntity="realestate.DimImoveis" ExecutionContext="Integration" SelectStatement="SELECT * FROM [[ScenarioConfig:ST_Database]].[realestate].[DimImoveis]" ExecutionTimeout="3600" Type="GenericIntegration">
+      <ProcessObjects>
+        <ProcessObject ObjectId="Imóvel" ObjectType="Dimension" TriggerProcessing="true" />
+      </ProcessObjects>
+    </Package>
+    <Package Name="IntFactVisitas" DestinationEntity="realestate.FactVisitas" ExecutionContext="Integration" SelectStatement="SELECT * FROM [[ScenarioConfig:ST_Database]].[realestate].[FactVisitas]" ExecutionTimeout="3600" Type="GenericIntegration" />
+    <Package Name="IntFactVendas" DestinationEntity="realestate.FactVendas" ExecutionContext="Integration" SelectStatement="SELECT * FROM [[ScenarioConfig:ST_Database]].[realestate].[FactVendas]" ExecutionTimeout="3600" Type="GenericIntegration">
+      <ProcessObjects>
+        <ProcessObject ObjectId="Detalhe Vendas" ObjectType="Dimension" TriggerProcessing="true" />
+        <ProcessObject ObjectId="Detalhe Visitas" ObjectType="Dimension" TriggerProcessing="true" />
+        <ProcessObject ObjectId="Real Estate" ObjectType="Cube" TriggerProcessing="true" />
+      </ProcessObjects>
+    </Package>
+    <Package Name="IntDimItemsExtended" DestinationEntity="realestate.DimItemsExtended" ExecutionContext="Integration" SelectStatement="SELECT * FROM [[ScenarioConfig:ST_Database]].[realestate].[DimItemsExtended]" Type="GenericIntegration">
+      <ProcessObjects>
+        <ProcessObject ObjectId="Item" ObjectType="Dimension" TriggerProcessing="true" />
+      </ProcessObjects>
+    </Package>
+  </PackageMetadata>
+</SolutionSchema>

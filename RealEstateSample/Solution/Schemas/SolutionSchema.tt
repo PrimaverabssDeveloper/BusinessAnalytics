@@ -1,0 +1,13 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ Import Namespace="System.IO" #>
+<#@ assembly name="Primavera.BusinessAnalytics.SDK.CodeGeneration.dll" #>
+<#@ import namespace="Primavera.BusinessAnalytics.SDK.CodeGeneration" #>
+<#@ output extension=".xml" #>
+
+<#
+    using (SolutionSchemaGenerator t = new SolutionSchemaGenerator(Host.ResolvePath(@"..\Solution.config")))
+    {
+		t.ModelPath = Host.ResolvePath(@"SolutionSchemaModel.ssm");
+        this.Write(t.TransformText());
+    }
+#>

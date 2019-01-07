@@ -1,0 +1,45 @@
+﻿
+<Batch xmlns='http://schemas.microsoft.com/analysisservices/2003/engine' Transaction='true'>
+    <Delete IgnoreFailures="true" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <Object>
+    <DatabaseID>@@OLAP_DBNAME@@</DatabaseID>
+    <DataSourceViewID>RealEstateView</DataSourceViewID>
+  </Object>
+</Delete>
+<Delete IgnoreFailures="true" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <Object>
+    <DatabaseID>@@OLAP_DBNAME@@</DatabaseID>
+    <DimensionID>Agente</DimensionID>
+  </Object>
+</Delete>
+<Delete IgnoreFailures="true" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <Object>
+    <DatabaseID>@@OLAP_DBNAME@@</DatabaseID>
+    <DimensionID>Cliente</DimensionID>
+  </Object>
+</Delete>
+<Delete IgnoreFailures="true" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <Object>
+    <DatabaseID>@@OLAP_DBNAME@@</DatabaseID>
+    <DimensionID>Detalhe Vendas</DimensionID>
+  </Object>
+</Delete>
+<Delete IgnoreFailures="true" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <Object>
+    <DatabaseID>@@OLAP_DBNAME@@</DatabaseID>
+    <DimensionID>Detalhe Visitas</DimensionID>
+  </Object>
+</Delete>
+<Delete IgnoreFailures="true" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <Object>
+    <DatabaseID>@@OLAP_DBNAME@@</DatabaseID>
+    <DimensionID>Imóvel</DimensionID>
+  </Object>
+</Delete>
+<Delete IgnoreFailures="true" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <Object>
+    <DatabaseID>@@OLAP_DBNAME@@</DatabaseID>
+    <CubeID>Real Estate</CubeID>
+  </Object>
+</Delete>
+</Batch>
